@@ -1,0 +1,58 @@
+
+.form-container {
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #f2f2f2; 
+    text-align: center; 
+}
+
+.form-container form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.form-container form .time-measurement {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+
+.form-container form select,
+.form-container form input[type="number"],
+.form-container form textarea {
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.form-container form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer; 
+    text-align: center; 
+    text-decoration: none; 
+    font-size: 16px; 
+}
+
+h3 {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+
+#timeInput {
+    text-align: center;
+    -webkit-appearance: none; 
+    -moz-appearance: textfield; 
+    appearance: none;
+    border: 1px solid gray; 
+}
+
+#timeInput::-webkit-outer-spin-button,
+#timeInput::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Oculta las flechas */
+    margin: 0; /* Asegura que no haya margen */
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Motor Manager</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="description" content="Motor Manager">
+    <meta name="keywords" content="motor, manager, arduino">
+    <meta name="author" content="Steven Mendoza">
+
+    <meta http-equiv="refresh" content="1800"> <!-- Refresh each 30mins --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='webStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_stylesheet.css') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='arduinoLogo.png') }}">
+
+</head>
+<body>
+    <header>
+        
+        <h1>Motor Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    
+        <section id="motorData" class="form-container">
+            <form method="POST">
+                <h3>Motor Speed</h3>
+                <select name="Speed">
+                    <option value="off">Off</option>
+                    <option value="min">Min</option>
+                    <option value="max">Max</option>
+                </select>
+
+                <h3>Motor Rotation</h3>
+                <select name="Rotation">
+                    <option value="clockwise">Clockwise</option>
+                    <option value="counterClockwise">Counter-Clockwise</option>
+                </select>
+
+                <h3>Start Mode</h3>
+                <select name="Mode">
+                    <option value="starDelta">Star-Delta</option>
+                    <option value="star">Star</option>
+                    <option value="delta">Delta</option>
+                </select>
+
+                <h3>Timer</h3>
+                <label for="timerType">Type:</label><br>
+                <select name="timerType">
+                    <option value="Desactivated">Desactivated</option>
+                    <option value="TON">TON</option>
+                    <option value="TOF">TOF</option>
+                </select>
+                <br>
+                <label for="time">Time:</label><br>
+                <input type="number" name="time" id="timeInput" value="0" min="0" max="60">
+                <select name="Measurment">
+                    <option value="seg">seconds</option>
+                    <option value="min">minutes</option>
+                    <option value="hours">hours</option>
+                </select>
+
+                <h3>Conditions</h3>
+                <select name="conditionalType">
+                    <option value="none">none</option>
+                    <option value="if">if</option>
+                    <option value="while">while</option>
+                </select>
+                <br><label for="conditional_title">Conditionals:</label><br>
+                <textarea id="Conditional" name="Conditional"></textarea><br>
+
+
+                <input type="submit" value="Send">
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Steven Mendoza &copy; 2024</p>
+    </footer>
+</body>
+</html>
+
